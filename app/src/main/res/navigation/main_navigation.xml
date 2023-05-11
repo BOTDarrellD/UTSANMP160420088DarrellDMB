@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    android:label="Help Screen"
+    app:startDestination="@id/helloFragment">
+
+    <fragment
+        android:id="@+id/helloFragment"
+        android:name="com.example.utsanmp_160420088_darrelldmb.view.HelloFragment"
+        android:label="Hello Screen"
+        tools:layout="@layout/fragment_hello">
+        <action
+            android:id="@+id/actionMenuFragment"
+            app:destination="@id/itemMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemMenu"
+        android:name="com.example.utsanmp_160420088_darrelldmb.view.MenuFragment"
+        android:label="Main Screen"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/actionHelloFragment"
+            app:destination="@id/helloFragment"
+            app:popUpTo="@id/helloFragment" />
+        <action
+            android:id="@+id/actionDoctorFragment"
+            app:destination="@id/itemDoctor" />
+        <action
+            android:id="@+id/actionObatFragment"
+            app:destination="@id/itemObat" />
+        <action
+            android:id="@+id/actionProfileFragment"
+            app:destination="@id/itemProfile" />
+        <action
+            android:id="@+id/actionHelpFragment"
+            app:destination="@id/itemHelp" />
+        <argument
+            android:name="player_name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemDoctor"
+        android:name="com.example.utsanmp_160420088_darrelldmb.view.DoctorFragment"
+        android:label="Doctor Screen"
+        tools:layout="@layout/fragment_doctor">
+        <action
+            android:id="@+id/actionDoctorDetailFragment"
+            app:destination="@id/doctorDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemObat"
+        android:name="com.example.utsanmp_160420088_darrelldmb.view.ObatFragment"
+        android:label="Obat Screen"
+        tools:layout="@layout/fragment_obat">
+        <action
+            android:id="@+id/actionObatDetailFragment"
+            app:destination="@id/obatDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="com.example.utsanmp_160420088_darrelldmb.view.ProfileFragment"
+        android:label="Profile Screen"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/itemHelp"
+        android:name="com.example.utsanmp_160420088_darrelldmb.view.HelpFragment"
+        android:label="Help Screen"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/doctorDetailFragment"
+        android:name="com.example.utsanmp_160420088_darrelldmb.view.DoctorDetailFragment"
+        android:label="Doctor Detail Screen"
+        tools:layout="@layout/fragment_doctor_detail" />
+    <fragment
+        android:id="@+id/obatDetailFragment"
+        android:name="com.example.utsanmp_160420088_darrelldmb.view.ObatDetailFragment"
+        android:label="Obat Detail Screen"
+        tools:layout="@layout/fragment_obat_detail" />
+</navigation>
